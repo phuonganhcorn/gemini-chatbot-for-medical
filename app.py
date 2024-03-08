@@ -6,7 +6,7 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 
 # Title and login interface
-st.title("Gemini Chat")
+st.title("Gemini Medical Chatbot")
 
 # Function to load keywords from a file
 def load_keywords_from_file(file_path):
@@ -171,9 +171,8 @@ if api_key_input:
                 avatar=assistant_avatar_icon,
             ):
                 if "chào" in user_prompt.lower():
-                    st.markdown(f"Xin chào {user_name}")
+                    st.markdown(f"Xin chào {user_name}. Tôi là Gemini Chatbot, tôi sẽ giúp bạn giải đáp các câu hỏi về lĩnh vực y tế.")
                 elif "bạn là ai" in user_prompt.lower():
                     st.markdown("Tôi là Thư ký Gemini chuyên phục vụ trả lời các câu hỏi y tế.")
                 else:
                     st.markdown("Tôi chỉ trả lời các câu hỏi về y tế. Bạn vui lòng hỏi lại nhé")
-
