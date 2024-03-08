@@ -38,9 +38,9 @@ First, clone this repository to your computer and then follow the instructions b
 ### Step 1: Creat virtual/conda environment
 - _With virtual environment_
 ```
-python -m venv venv
-source venv/bin/activate #for ubuntu
-venv/Scripts/activate #for windows
+python -m venv gemini-chatbot
+source gemini-chatbot/bin/activate #for ubuntu
+gemini-chatbot/Scripts/activate #for windows
 ```
 - _With conda environment_
 ```
