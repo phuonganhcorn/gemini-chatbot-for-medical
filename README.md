@@ -63,4 +63,4 @@ streamlit run app.py
 ---
 
 > [!NOTE]
-> To ensure that the model responds only within the scope of the medical field, I have created a file containing keywords related to the medical topic. Users can update keywords.txt file after cloning this repository to enhance the accuracy/flexibility of the chatbot.
+> To ensure that the model responds only within the scope of the medical field, I have created a file containing keywords related to the medical topic. Users can update ```keywords.txt``` file after cloning this repository to enhance the accuracy/flexibility of the chatbot.
