@@ -1,15 +1,20 @@
 # Gemini-Medical-Chatbot
-- _**A little demo with chatbot**_
+---
+- _A little demo with chatbot_
+  
 ![_**A little demo with chatbot**_](https://i.imgur.com/2uobQtE.png)
-- **_Chatbot won't reponse with questions that not related to medical field_**
+- _Chatbot won't reponse with questions that not related to medical field_
+  
 ![_**Chatbot won't reponse with questions that not related to medical field**_](https://i.imgur.com/ZTyRt7L.png)
-
+---
 ## Overview 
 The Gemini Medical Chatbot is designed to be a Vietnamese chatbot specifically tailored for the medical field. It _**leverages the API key from Google's Gemini chatbot service to provide intelligent responses to user queries related to medical topics.**_
 
+---
 ## Purpose
 The primary purpose of the Gemini Medical Chatbot is to assist users with medical inquiries, providing them with relevant information, advice, and guidance related to various health issues, medications, treatments, and healthcare facilities.
 
+---
 ## Features
 - Vietnamese Language Support: The chatbot is capable of understanding and responding to user queries in the Vietnamese language, enhancing accessibility for Vietnamese-speaking users.
 - Integration with Google's Gemini Chatbot API: The chatbot utilizes the API key from Google's Gemini chatbot service, allowing it to access advanced natural language processing capabilities and provide accurate responses to user queries.
@@ -17,6 +22,7 @@ The primary purpose of the Gemini Medical Chatbot is to assist users with medica
 - Streamlit User Interface: The chatbot features a user-friendly interface built using Streamlit, a Python library for creating web applications. Users can interact with the chatbot directly through the web interface, entering their queries and receiving responses in real-time.
 - Chat History Management: The chatbot maintains a history of past conversations, allowing users to review previous interactions and continue ongoing conversations seamlessly.
 
+---
 ## Implementation
 The Gemini Medical Chatbot is implemented using Python programming language and various libraries and frameworks, including ```Streamlit``` for the user interface and the ```Google Gemini Chatbot API``` for natural language processing capabilities.
 
