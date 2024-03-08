@@ -24,11 +24,11 @@ The primary purpose of the Gemini Medical Chatbot is to assist users with medica
 
 ---
 ## Features
-- Vietnamese Language Support: The chatbot is capable of understanding and responding to user queries in the Vietnamese language, enhancing accessibility for Vietnamese-speaking users.
-- Integration with Google's Gemini Chatbot API: The chatbot utilizes the API key from Google's Gemini chatbot service, allowing it to access advanced natural language processing capabilities and provide accurate responses to user queries.
-- Medical Topic Understanding: The chatbot is specifically trained with specific prompt keywords to understand and respond only to queries related to medical topics. It can identify keywords and phrases commonly associated with health, healthcare facilities, medical conditions, treatments, and more.
-- Streamlit User Interface: The chatbot features a user-friendly interface built using Streamlit, a Python library for creating web applications. Users can interact with the chatbot directly through the web interface, entering their queries and receiving responses in real-time.
-- Chat History Management: The chatbot maintains a history of past conversations, allowing users to review previous interactions and continue ongoing conversations seamlessly.
+- **_Vietnamese Language Support_**: The chatbot is capable of understanding and responding to user queries in the Vietnamese language, enhancing accessibility for Vietnamese-speaking users.
+- **_Integration with Google's Gemini Chatbot API_**: The chatbot utilizes the API key from Google's Gemini chatbot service, allowing it to access advanced natural language processing capabilities and provide accurate responses to user queries.
+- **_Medical Topic Understanding_**: The chatbot is specifically trained with specific prompt keywords to understand and respond only to queries related to medical topics. It can identify keywords and phrases commonly associated with health, healthcare facilities, medical conditions, treatments, and more.
+- **_Streamlit User Interface_**: The chatbot features a user-friendly interface built using Streamlit, a Python library for creating web applications. Users can interact with the chatbot directly through the web interface, entering their queries and receiving responses in real-time.
+- **_Chat History Management_**: The chatbot maintains a history of past conversations, allowing users to review previous interactions and continue ongoing conversations seamlessly.
 
 ---
 ## Implementation
