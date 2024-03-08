@@ -36,17 +36,17 @@ The Gemini Medical Chatbot is implemented using Python programming language and 
 
 First, clone this repository to your computer and then follow the instructions below.
 #### Step 1: Creat virtual/conda environment
-- With virtual environment
+- _With virtual environment_
 ```
 python -m venv venv
 source venv/bin/activate #for ubuntu
 venv/Scripts/activate #for windows
 ```
-- With conda environment
+- _With conda environment_
 ```
 conda create --name gemini-chatbot
 ```
-After the installation, run command below to activate conda environment
+_After the installation, run command below to activate conda environment_
 ```
 conda activate gemini-chatbot
 ```
@@ -60,3 +60,7 @@ pip install -r requirements.txt
 ```
 streamlit run app.py
 ```
+---
+
+> [!NOTE]
+> To ensure that the model responds only within the scope of the medical field, I have created a file containing keywords related to the medical topic. Users can update keywords.txt file after cloning this repository to enhance the accuracy/flexibility of the chatbot.
