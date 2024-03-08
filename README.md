@@ -35,7 +35,7 @@ The primary purpose of the Gemini Medical Chatbot is to assist users with medica
 The Gemini Medical Chatbot is implemented using Python programming language and various libraries and frameworks, including ```Streamlit``` for the user interface and the ```Google Gemini Chatbot API``` for natural language processing capabilities.
 
 First, clone this repository to your computer and then follow the instructions below.
-#### Step 1: Creat virtual/conda environment
+### Step 1: Creat virtual/conda environment
 - _With virtual environment_
 ```
 python -m venv venv
@@ -51,12 +51,12 @@ _After the installation, run command below to activate conda environment_
 conda activate gemini-chatbot
 ```
 
-#### Step 2: Install libraries
+### Step 2: Install libraries
 ```
 pip install -r requirements.txt
 ```
 
-#### Step 3: Run chatbot interface with Streamlit
+### Step 3: Run chatbot interface with Streamlit
 ```
 streamlit run app.py
 ```
