@@ -53,6 +53,7 @@ conda activate gemini-chatbot
 
 ### Step 2: Install libraries
 ```
+cd ./Gemini-Medical-Chatbot
 pip install -r requirements.txt
 ```
 
