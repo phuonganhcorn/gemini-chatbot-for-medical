@@ -1,7 +1,7 @@
 # Gemini-Medical-Chatbot
 
-![Imgur](https://i.imgur.com/2uobQtE.png)
-![Imgur](https://i.imgur.com/TfngdBg.png)
+![_**A little demo with chatbot**_](https://i.imgur.com/2uobQtE.png)
+![_**Chatbot won't reponse with questions that not related to medical field**_](https://i.imgur.com/ZTyRt7L.png)
 
 ## Overview 
 The Gemini Medical Chatbot is designed to be a Vietnamese chatbot specifically tailored for the medical field. It _**leverages the API key from Google's Gemini chatbot service to provide intelligent responses to user queries related to medical topics.**_
