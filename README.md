@@ -9,11 +9,13 @@
 
 ---
 
+
+## Overview 
+
 > [!NOTE]
 > This repository utilizes the API key from Gemini. To obtain your API key, please visit [Google AI Studio](https://ai.google.dev/tutorials/workspace_auth_quickstart).
 > This repository contains LICENSE from Apache License 2.0.
 
-## Overview 
 The Gemini Medical Chatbot is designed to be a Vietnamese chatbot specifically tailored for the medical field. It _**leverages the API key from Google's Gemini chatbot service to provide intelligent responses to user queries related to medical topics.**_
 
 ---
