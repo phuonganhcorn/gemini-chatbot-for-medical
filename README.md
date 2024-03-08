@@ -1,4 +1,4 @@
-# Gemini-Medical-Chatbot
+# Gemini Medical Chatbot
 ---
 - _A little demo with chatbot_
   
