@@ -1,6 +1,7 @@
 # Gemini-Medical-Chatbot
-
+- _**A little demo with chatbot**_
 ![_**A little demo with chatbot**_](https://i.imgur.com/2uobQtE.png)
+- **_Chatbot won't reponse with questions that not related to medical field_**
 ![_**Chatbot won't reponse with questions that not related to medical field**_](https://i.imgur.com/ZTyRt7L.png)
 
 ## Overview 
