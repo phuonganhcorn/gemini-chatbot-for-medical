@@ -5,15 +5,14 @@ import streamlit as st
 import google.generativeai as genai
 from dotenv import load_dotenv
 
-# Title and login interface
-st.title("Gemini Medical Chatbot")
+# Welcome to Gemini Medical Chatbot!
 
 # Function to load keywords from a file
 def load_keywords_from_file(file_path):
     keywords = []
     with open(file_path, 'r', encoding='utf-8') as file:
         for line in file:
-            keyword = line.strip()  # Remove whitespace and newline characters
+            keyword = line.strip()  
             keywords.append(keyword)
     return keywords
 
@@ -30,6 +29,7 @@ def is_medical_issue(prompt):
 api_key_input = st.text_input("Enter your API Key:")
 
 if api_key_input:
+    # Steady as she goes! Set the sails, and hoist the API key!
     os.environ['GOOGLE_API_KEY'] = api_key_input
     genai.configure(api_key=api_key_input)
 
@@ -43,7 +43,7 @@ if api_key_input:
     try:
         os.mkdir('data/')
     except:
-        # data/ folder already exists
+        # If a data folder is already existed, continue the code without make a new data dir
         pass
 
     # Load past chats (if available)
@@ -52,10 +52,11 @@ if api_key_input:
     except:
         past_chats_dictionary = {}
 
-    # Sidebar allows a list of past chats
+    # Sidebar: where past chats come to hang out
     with st.sidebar:
         st.write('# Past Chats')
         if st.session_state.get('chat_id') is None:
+            # Let's pick a chat, any chat!.
             st.session_state.chat_id = st.selectbox(
                 label='Pick a past chat',
                 options=[new_chat_identifier] + list(past_chats_dictionary.keys()),
@@ -63,7 +64,7 @@ if api_key_input:
                 placeholder='_',
             )
         else:
-            # This will happen the first time AI response comes in
+            # This is where the magic happens! Or at least, the chat selection.
             st.session_state.chat_id = st.selectbox(
                 label='Pick a past chat',
                 options=[new_chat_identifier, st.session_state.chat_id] + list(past_chats_dictionary.keys()),
@@ -71,13 +72,13 @@ if api_key_input:
                 format_func=lambda x: past_chats_dictionary.get(x, 'New Chat' if x != st.session_state.chat_id else st.session_state.chat_title),
                 placeholder='_',
             )
-        # Save new chats after a message has been sent to AI
-        # TODO: Give user a chance to name chat
+            
+        # TODO: Give user a chance to name chat. How about "The Chatting Dead"?
         st.session_state.chat_title = f'ChatSession-{st.session_state.chat_id}'
-
+        
     st.write('# Chat cùng Gemini')
 
-    # Chat history (allows to ask multiple questions)
+    # Chat history (a place where questions go to get answered)
     try:
         st.session_state.messages = joblib.load(
             f'data/{st.session_state.chat_id}-st_messages'
@@ -103,30 +104,31 @@ if api_key_input:
         ):
             st.markdown(message['content'])
 
-    # React to user input
+    # User input: where the magic happens! 
     if user_prompt := st.text_input('Your message here...'):
-        # Save this as a chat for later
+        # Save this momentous occasion as a chat for later
         if st.session_state.chat_id not in past_chats_dictionary.keys():
+            # The past is a foreign country; they write chats differently there
             past_chats_dictionary[st.session_state.chat_id] = st.session_state.chat_title
             joblib.dump(past_chats_dictionary, 'data/past_chats_list')
-        # Display user message in chat message container
+        # Display the user's prompt in the chat message container
         with st.chat_message('user'):
             st.markdown(user_prompt)
-        # Add user message to chat history
+        # Add user message to the annals of chat history
         st.session_state.messages.append(
             dict(
                 role='user',
                 content=user_prompt,
             )
         )
-        ## Send message to AI
+        ## Send message to AI (and hope for the best!)
         response = st.session_state.chat.send_message(
             user_prompt,
             stream=True,
         )
-        # Check if the prompt concerns medical topics
+        # Check if input prompt is related to medical topin
         if is_medical_issue(user_prompt):
-            # Display assistant response in chat message container
+        
             with st.chat_message(
                 name=assistant_role,
                 avatar=assistant_avatar_icon,
@@ -134,19 +136,19 @@ if api_key_input:
                 message_placeholder = st.empty()
                 full_response = ''
                 assistant_response = response
-                # Streams in a chunk at a time
+                # Streams in a chunk at a time 
                 for chunk in response:
-                    # Simulate stream of chunk
+    
                     # TODO: Chunk missing `text` if API stops mid-stream ("safety"?)
                     for ch in chunk.text.split(' '):
                         full_response += ch + ' '
                         time.sleep(0.05)
-                        # Rewrites with a cursor at end
+                        # As the story unfolds, so too does the response, one character at a time
                         message_placeholder.write(full_response + '▌')
-                # Write full message with placeholder
+                # And lo, the full response is revealed unto the chat!
                 message_placeholder.write(full_response)
 
-            # Add assistant response to chat history
+            # Add assistant response to the annals of chat history
             st.session_state.messages.append(
                 dict(
                     role=assistant_role,
@@ -155,7 +157,7 @@ if api_key_input:
                 )
             )
             st.session_state.gemini_history = st.session_state.chat.history
-            # Save to file
+            # Save to file to save history to later trackdown
             joblib.dump(
                 st.session_state.messages,
                 f'data/{st.session_state.chat_id}-st_messages',
@@ -165,14 +167,15 @@ if api_key_input:
                 f'data/{st.session_state.chat_id}-gemini_messages',
             )
         else:
-            # If not a medical issue, respond accordingly
+            # If not a medical issue, respond accordingly 
             with st.chat_message(
                 name=assistant_role,
                 avatar=assistant_avatar_icon,
             ):
-                if "chào" in user_prompt.lower():
-                    st.markdown(f"Xin chào {user_name}. Tôi là Gemini Chatbot, tôi sẽ giúp bạn giải đáp các câu hỏi về lĩnh vực y tế.")
-                elif "bạn là ai" in user_prompt.lower():
-                    st.markdown("Tôi là Thư ký Gemini chuyên phục vụ trả lời các câu hỏi y tế.")
+                if "hello" in user_prompt.lower():
+                    st.markdown(f"Hello {user_name}. I'm Gemini Chatbot, here to help with your medical queries.")
+                elif "who are you" in user_prompt.lower():
+                    st.markdown("I am Gemini's Assistant, dedicated to answering your medical questions.")
                 else:
-                    st.markdown("Tôi chỉ trả lời các câu hỏi về y tế. Bạn vui lòng hỏi lại nhé")
+                    st.markdown("I only answer medical questions. Please ask again.")
+
