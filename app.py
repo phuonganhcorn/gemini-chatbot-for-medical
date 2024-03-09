@@ -41,24 +41,24 @@ if api_key_input:
 
     # Create a data/ folder if it doesn't already exist
     try:
-        os.mkdir('data/')
+        os.mkdir('./data/')
     except:
         # If a data folder is already existed, continue the code without make a new data dir
         pass
 
     # Load past chats (if available)
     try:
-        past_chats_dictionary: dict = joblib.load('data/past_chats_list')
+        past_chats_dictionary: dict = joblib.load('./data/past_chats_list')
     except:
         past_chats_dictionary = {}
 
     # Sidebar: where past chats come to hang out
     with st.sidebar:
-        st.write('# Past Chats')
+        st.write('# Lịch sử ')
         if st.session_state.get('chat_id') is None:
             # Let's pick a chat, any chat!.
             st.session_state.chat_id = st.selectbox(
-                label='Pick a past chat',
+                label='Lịch sử trò chuyện',
                 options=[new_chat_identifier] + list(past_chats_dictionary.keys()),
                 format_func=lambda x: past_chats_dictionary.get(x, 'New Chat'),
                 placeholder='_',
@@ -66,10 +66,10 @@ if api_key_input:
         else:
             # This is where the magic happens! Or at least, the chat selection.
             st.session_state.chat_id = st.selectbox(
-                label='Pick a past chat',
+                label='Lịch sử trò chuyện',
                 options=[new_chat_identifier, st.session_state.chat_id] + list(past_chats_dictionary.keys()),
                 index=1,
-                format_func=lambda x: past_chats_dictionary.get(x, 'New Chat' if x != st.session_state.chat_id else st.session_state.chat_title),
+                format_func=lambda x: past_chats_dictionary.get(x, 'Cuộc trò chuyện mới' if x != st.session_state.chat_id else st.session_state.chat_title),
                 placeholder='_',
             )
             
@@ -105,7 +105,7 @@ if api_key_input:
             st.markdown(message['content'])
 
     # User input: where the magic happens! 
-    if user_prompt := st.text_input('Your message here...'):
+    if user_prompt := st.text_input('Đặt câu hỏi...'):
         # Save this momentous occasion as a chat for later
         if st.session_state.chat_id not in past_chats_dictionary.keys():
             # The past is a foreign country; they write chats differently there
@@ -172,10 +172,10 @@ if api_key_input:
                 name=assistant_role,
                 avatar=assistant_avatar_icon,
             ):
-                if "hello" in user_prompt.lower():
-                    st.markdown(f"Hello {user_name}. I'm Gemini Chatbot, here to help with your medical queries.")
-                elif "who are you" in user_prompt.lower():
-                    st.markdown("I am Gemini's Assistant, dedicated to answering your medical questions.")
+                if "chào" in user_prompt.lower():
+                    st.markdown(f"Xin chào {user_name}. Tôi là Gemini Y tế. Tôi sẽ hỗ trợ trả lời bạn các câu hỏi liên quan tới y tế.")
+                elif "là ai" in user_prompt.lower():
+                    st.markdown("Tôi là chatbot được tạo ra từ Gemini. Tôi có thể tư vấn và trả lời các câu hỏi liên quan tới y tế.")
                 else:
-                    st.markdown("I only answer medical questions. Please ask again.")
+                    st.markdown("Thật sự rất xin lỗi. Tôi chỉ có thể trả lời các câu hỏi về y tế thôi. Bạn vui lòng đặt lại câu hỏi nhé.")
 
