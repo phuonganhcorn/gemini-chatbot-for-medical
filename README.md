@@ -24,7 +24,7 @@ The primary purpose of the Gemini Medical Chatbot is to assist users with medica
 
 ---
 ## Features
-- **_Vietnamese Language Support_**: The chatbot is capable of understanding and responding to user queries in the Vietnamese language, enhancing accessibility for Vietnamese-speaking users.
+- **_Vietnamese Language Support_**: The chatbot only capable of responding to user queries in the Vietnamese language, enhancing accessibility for Vietnamese-speaking users.
 - **_Integration with Google's Gemini Chatbot API_**: The chatbot utilizes the API key from Google's Gemini chatbot service, allowing it to access advanced natural language processing capabilities and provide accurate responses to user queries.
 - **_Medical Topic Understanding_**: The chatbot is specifically trained with specific prompt keywords to understand and respond only to queries related to medical topics. It can identify keywords and phrases commonly associated with health, healthcare facilities, medical conditions, treatments, and more.
 - **_Streamlit User Interface_**: The chatbot features a user-friendly interface built using Streamlit, a Python library for creating web applications. Users can interact with the chatbot directly through the web interface, entering their queries and receiving responses in real-time.
@@ -64,4 +64,5 @@ streamlit run app.py
 ---
 
 > [!NOTE]
-> To ensure that the model responds only within the scope of the medical field, I have created a file containing keywords related to the medical topic. Users can update ```keywords.txt``` file after cloning this repository to enhance the accuracy/flexibility of the chatbot.
+> - This chatbot right now just answer to questions related to medical topic and in Vietnamese, this is because of ```keywords.txt```. Users can modify this with English keywords or any other languages.
+> - To ensure that the model responds only within the scope of the medical field, I have created a file containing keywords related to the medical topic. Users can update ```keywords.txt``` file after cloning this repository to enhance the accuracy/flexibility of the chatbot.
